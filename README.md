@@ -7,6 +7,8 @@ Assignment project for [BHIVE Workspace](https://bhiveworkspace.com/)
     `python3.10 -m venv ~/venvs/bhive_project`
     then
     `source ~/venvs/bhive_project/bin/activate`
+  * Copy the .env.example to .env and update the values
+  `cp dotenv.example .env`
   * Install the requirements.txt
     `pip install -r requirements.txt`
   * Run migrations

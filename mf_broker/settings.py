@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,10 +22,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-z#ouu@8x)_o@!_$(w2)t!af^^d=zpnecq-&n4yx4^w65$&+d85"
+SECRET_KEY = config("SECRET_KEY")
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config("DJANGO_DEBUG", default=False, cast=bool)
 
 ALLOWED_HOSTS = []
 
@@ -141,6 +144,7 @@ REST_FRAMEWORK = {
     ],
 }
 
-RAPID_API_URL = "https://latest-mutual-fund-nav.p.rapidapi.com/latest"
-RAPID_API_HOST = "latest-mutual-fund-nav.p.rapidapi.com"
-RAPID_API_KEY = "c3655b40c3msh60c7e07f11d3927p1443b3jsnf093a2dc6dff"
+
+RAPID_API_URL = config("RAPID_API_URL")
+RAPID_API_HOST = config("RAPID_API_HOST")
+RAPID_API_KEY = config("RAPID_API_KEY")

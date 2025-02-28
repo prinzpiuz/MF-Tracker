@@ -1,0 +1,5 @@
+SECRET_KEY = 'django-insecure-z#ouu@8x)_o@!_$(w2)t!af^^d=zpnecq-&n4yx4^w65$&+d85'
+DJANGO_DEBUG=true
+RAPID_API_URL = "https://latest-mutual-fund-nav.p.rapidapi.com/latest"
+RAPID_API_HOST = "rapid api host"
+RAPID_API_KEY = "your rapid api key"
