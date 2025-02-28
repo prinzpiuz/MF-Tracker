@@ -49,7 +49,11 @@ class PortfolioSerializer(serializers.ModelSerializer):
 
     mf_name = serializers.ReadOnlyField(source="mutual_fund.name")
     nav = serializers.ReadOnlyField(source="mutual_fund.nav")
+    current_value = serializers.SerializerMethodField()
 
     class Meta:
         model = UserFunds
-        fields = ["id", "mf_name", "nav", "quantity"]
+        fields = ["id", "mf_name", "nav", "quantity", "current_value"]
+
+    def get_current_value(self, obj):
+        return obj.quantity * obj.mutual_fund.nav
