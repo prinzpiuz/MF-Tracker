@@ -7,4 +7,5 @@ __pycache__/
 *.pyo
 *.pyd
 .DS_Store
-db.sqlite3  # Exclude existing DB (optional)
+db.sqlite3
+.vscode/*

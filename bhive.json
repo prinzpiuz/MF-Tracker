@@ -1,0 +1,134 @@
+{
+  "v": 6,
+  "name": "bhive",
+  "folders": [],
+  "requests": [
+    {
+      "v": "11",
+      "name": "Create Account",
+      "method": "POST",
+      "endpoint": "http://localhost:8000/api/v1/create_account/",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"email\": \"t3est@example.com\",\n  \"password\": \"testpass123\",\n  \"password_confirmation\": \"testpass123\"\n}"
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "name": "Login",
+      "method": "POST",
+      "endpoint": "http://localhost:8000/api/login/",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"username\": \"testuser\",\n  \"password\": \"testpass123\"\n}"
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "name": "List MFs",
+      "method": "GET",
+      "endpoint": "http://localhost:8000/api/v1/list_mfs/",
+      "params": [],
+      "headers": [
+        {
+          "key": "Authorization",
+          "value": "Token f011b5731c42c73a526ec48687837d9c012dcc16",
+          "active": true,
+          "description": ""
+        }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "none",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "name": "Add Fund",
+      "method": "POST",
+      "endpoint": "http://localhost:8000/api/v1/add_fund/",
+      "params": [],
+      "headers": [
+        {
+          "key": "Authorization",
+          "value": "Token f011b5731c42c73a526ec48687837d9c012dcc16",
+          "active": true,
+          "description": ""
+        }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"quantity\": 10,\n  \"scheme_Code\": \"120450\"\n}"
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "name": "PortFolio",
+      "method": "GET",
+      "endpoint": "http://localhost:8000/api/v1/list_portfolio/",
+      "params": [],
+      "headers": [
+        {
+          "key": "Authorization",
+          "value": "Token f011b5731c42c73a526ec48687837d9c012dcc16",
+          "active": true,
+          "description": ""
+        }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    }
+  ],
+  "auth": {
+    "authType": "none",
+    "authActive": true
+  },
+  "headers": [],
+  "_ref_id": "coll_m7n2fsbf_0b086d79-6db6-40ca-b00b-ca6b1875bc80"
+}
