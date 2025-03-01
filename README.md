@@ -24,6 +24,9 @@ Assignment project for [BHIVE Workspace](https://bhiveworkspace.com/)
   * To run migrations
   `docker-compose exec web python manage.py migrate`
 
+* To run test cases
+  `python manage.py test`
+
 * API Collection
   [Hoppscotch](https://hoppscotch.io/) / [Postman](https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-from-hoppscotch/) importable collection from [here](./bhive.json)
 * Swagger API documentation

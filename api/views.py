@@ -43,12 +43,16 @@ class LoginView(APIView):
 
 
 class LogoutView(APIView):
+
+    permission_classes = [permissions.IsAuthenticated]
+
     def post(self, request) -> Response:
         request.user.auth_token.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class ListMutualFundsView(APIView):
+
     permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request) -> Response:
@@ -62,6 +66,7 @@ class ListMutualFundsView(APIView):
 
 
 class AddFundsView(APIView):
+
     permission_classes = [permissions.IsAuthenticated]
 
     def post(self, request) -> Response:
