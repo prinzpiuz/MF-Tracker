@@ -4,17 +4,40 @@ Assignment project for [BHIVE Workspace](https://bhiveworkspace.com/)
 
 * To Run the project locally
   * Create a virtual environment and activate it
-    `python3.10 -m venv ~/venvs/bhive_project`
+
+    ```shell
+    python3.10 -m venv ~/venvs/bhive_project
+    ```
+
     then
-    `source ~/venvs/bhive_project/bin/activate`
+
+    ```shell
+    source ~/venvs/bhive_project/bin/activate
+    ```
+
   * Copy the .env.example to .env and update the values
-  `cp dotenv.example .env`
+
+    ```shell
+    cp dotenv.example .env
+    ```
+
   * Install the requirements.txt
-    `pip install -r requirements.txt`
+
+    ```shell
+    pip install -r requirements.txt
+    ```
+
   * Run migrations
-    `python manage.py migrate`
+
+    ```shell
+    python manage.py migrate
+    ```
+
   * Run the server
-    `python manage.py runserver`
+
+    ```shell
+    python manage.py runserver
+    ```
 
 * Command To Update NAV
 
@@ -24,16 +47,35 @@ Assignment project for [BHIVE Workspace](https://bhiveworkspace.com/)
 
 * To Run the project on docker
   * Build the docker
-  `docker build`
+
+    ```shell
+    docker build
+
+    ```
+
   * Run the container
-  `docker-compose up`
+
+    ```shell
+    docker-compose up
+    ```
+
   * To run migrations
-  `docker-compose exec web python manage.py migrate`
+
+    ```shell
+    docker-compose exec web python manage.py migrate
+    ```
+
   * update the nav
-  `docker-compose exec web python manage.py update_nav`
+
+    ```shell
+    docker-compose exec web python manage.py update_nav
+    ```
 
 * To run test cases
-  `python manage.py test`
+
+  ```shell
+  python manage.py test
+  ```
 
 * API Collection
   [Hoppscotch](https://hoppscotch.io/) / [Postman](https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-from-hoppscotch/) importable collection from [here](./bhive.json)
@@ -88,6 +130,14 @@ Assignment project for [BHIVE Workspace](https://bhiveworkspace.com/)
 
     ```
 
+  * logout `api/v1/logout/`
+
+    ```shell
+    curl --request GET \
+    --url http://localhost:8000/api/v1/logout/ \
+    --header 'Authorization: Token fa303ca16d5de9811ed121625350b587920af5f6'
+    ```
+
   * List Mutual Funds `api/v1/list_mfs/`
 
     ```shell
@@ -99,8 +149,7 @@ Assignment project for [BHIVE Workspace](https://bhiveworkspace.com/)
     Response
 
     ```json
-    [
-    {
+    [{
         "Scheme_Code": 120437,
         "ISIN_Div_Payout_ISIN_Growth": "-",
         "ISIN_Div_Reinvestment": "INF846K01CU0",
@@ -110,7 +159,7 @@ Assignment project for [BHIVE Workspace](https://bhiveworkspace.com/)
         "Scheme_Type": "Open Ended Schemes",
         "Scheme_Category": "Debt Scheme - Banking and PSU Fund",
         "Mutual_Fund_Family": "Axis Mutual Fund"
-    },]
+    }]
     ```
 
   * Add Mutual Funds `api/v1/add_fund/`
